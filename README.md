@@ -1,4 +1,4 @@
 # 인터넷 기초[04] 과제 2 - 나만의 인공지능 서비스 백엔드
-[결정이 쉽지않은 그대를 위한 점메추](https://ssseen.github.io/menu_rec/) 서비스의 백엔드 API.
-
-프론트엔드의 요청을 받아서 GEMINI API를 호출하고, AI가 생성한 답변을 다시 프론트엔드로 전달한다.
+- [결정이 쉽지않은 그대를 위한 점메추](https://ssseen.github.io/menu_rec/) 서비스의 백엔드 API입니다.
+- JavaScript로 구현하였습니다.
+- 프론트엔드의 요청을 받아서 GEMINI API를 호출하고, AI가 생성한 답변을 다시 프론트엔드로 전달합니다.

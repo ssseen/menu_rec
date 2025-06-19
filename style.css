@@ -36,5 +36,6 @@ button {
    margin : 30px auto;
    font-size : 35px;
    color : rgb(229, 232, 189);
+   white-space : pre-wrap;
 
 }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8">
+<title>결정이 쉽지않은 그대를 위한 점메추</title>
+<link type = "text/css" rel = "stylesheet" href = "style.css">
+</head>
+
+<body>
+<h3>점심 메뉴 추천해드립니다!</h3>
+<hr>
+<img src="https://i.postimg.cc/zDQRn5vZ/image.jpg" height="300" alt="뭐먹지">
+<form id="form">
+   끌리는 <b>음식 종류</b>는?<br>
+   <small>예시 : 한식, 일식, 중식 etc</small>
+   <input type="text" id="foodStyle" name="foodStyle" /><br>
+   끌리는 <b>메인 재료</b>나 <b>맛</b>은?<br>
+   <small>예시 : 밥, 면, 매운맛 etc</small><br>
+   <input type="text" id="mainIngredient" name="mainIngredient" />
+   <button class="button" type = "submit">추천받기</button>
+</form>
+
+<div id = "result"></div>
+
+<script>
+   const resultDiv = document.getElementById("result");
+   const form = document.getElementById("form");
+
+   form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const foodStyle = document.getElementById("foodStyle").value;
+      const mainIngredient = document.getElementById("mainIngredient").value;
+
+      resultDiv.textContent = "메뉴 엄선중...";
+
+      try {
+         const response = await fetch("https://assign2-sigma.vercel.app/api/ssseenAI", {
+            method : "POST",
+            headers : {
+               "Content-Type" : "application/json",
+            },
+            body : JSON.stringify({foodStyle, mainIngredient}),
+         });
+
+         const data = await response.json();
+
+         if (response.ok) {
+            resultDiv.textContent = data.answer;
+         } else {
+            resultDiv.textContent = '오류: ${data.error}';
+         }
+      } catch (err) {
+         resultDiv.textContent = "서버와 통신 중 오류가 발생했습니다.";
+         console.error(err);
+      }
+   });
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+input:hover, textarea:hover {
+   background : rgb(212, 228, 234);
+}
+input {
+   text-align : center;
+   display : block;
+   margin : 20px auto 30px auto;
+   width : 200px;
+   height : 30px;
+   font-size : 18px;
+}
+small {
+   font-size : 17px;
+}
+body {
+   background-color : #111616;
+   color : #7f9ec0;
+   text-align : center;
+   font-size : 28px;
+}
+h3 {
+   text-align : center;
+   color : #96a3d7;
+   font-size : 35px;
+   font-weight : bold;
+}
+button {
+   color : #2d4d8c;
+   font-size : 25px;
+   background-color : rgb(224, 225, 241);
+   padding : 20px;
+   border-radius : 20px;
+   width : 300px;
+}
+#result {
+   margin : 30px auto;
+   font-size : 35px;
+   color : rgb(229, 232, 189);
+
+}
